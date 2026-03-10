@@ -41,6 +41,12 @@ collections:
             fields:
               - { label: "한국어", name: "ko", widget: "string" }
               - { label: "English", name: "en", widget: "string" }
+          - label: "연구실 소개"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "한국어", name: "ko", widget: "text" }
+              - { label: "English", name: "en", widget: "text" }
           - { label: "전화번호", name: "phone", widget: "string" }
           - { label: "이메일", name: "email", widget: "string" }
           - label: "배너"
@@ -100,14 +106,6 @@ collections:
             name: "researchInterests"
             widget: "list"
             field: { label: "분야", name: "interest", widget: "string" }
-          - label: "수상 이력"
-            name: "awards"
-            widget: "list"
-            summary: "{{fields.title}} ({{fields.year}})"
-            fields:
-              - { label: "수상명", name: "title", widget: "string" }
-              - { label: "연도", name: "year", widget: "number", value_type: "int" }
-              - { label: "수여 기관", name: "organization", widget: "string" }
           - label: "외부 링크"
             name: "links"
             widget: "object"
@@ -234,6 +232,9 @@ collections:
                 options:
                   - { label: "국제 논문", value: "international" }
                   - { label: "국내 논문", value: "domestic" }
+                  - { label: "특허", value: "patent" }
+                  - { label: "수상", value: "award" }
+                  - { label: "기타", value: "other" }
                 default: "international"
 
   # ── 프로젝트 ──
