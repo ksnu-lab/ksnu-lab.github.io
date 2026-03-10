@@ -3,39 +3,13 @@
     {
       "id": "alumni-1",
       "name": {
-        "ko": "김졸업",
-        "en": "Joleop Kim"
-      },
-      "degree": "PhD",
-      "enrollYear": 2015,
-      "graduationYear": 2021,
-      "currentAffiliation": "삼성전자",
-      "currentPosition": "",
-      "thesisTitle": ""
-    },
-    {
-      "id": "alumni-2",
-      "name": {
-        "ko": "이석졸",
-        "en": "Seokjol Lee"
-      },
-      "degree": "MS",
-      "enrollYear": 2019,
-      "graduationYear": 2021,
-      "currentAffiliation": "국가보안기술연구소",
-      "currentPosition": "",
-      "thesisTitle": ""
-    },
-    {
-      "id": "alumni-3",
-      "name": {
-        "ko": "박선배",
+        "ko": "김예시",
         "en": "Sunbae Park"
       },
       "degree": "MS",
       "enrollYear": 2020,
       "graduationYear": 2022,
-      "currentAffiliation": "한국인터넷진흥원",
+      "currentAffiliation": "국가보안기술연구소",
       "currentPosition": "",
       "thesisTitle": ""
     }
