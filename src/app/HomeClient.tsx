@@ -61,7 +61,7 @@ export default function HomeClient({ newsPosts }: { newsPosts: NewsPost[] }) {
               <>
                 더 안전한 디지털 세계를 위한
                 <br />
-                <span className="text-accent-500">지능형 보안</span> 연구
+                <span className="text-accent-500">컴퓨터 보안</span> 연구
               </>
             ) : (
               <>
@@ -74,7 +74,7 @@ export default function HomeClient({ newsPosts }: { newsPosts: NewsPost[] }) {
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-800 dark:text-gray-300 max-w-2xl mb-10 leading-relaxed">
             {locale === "ko"
               ? `${siteConfig.labName.ko}에서는 암호학, 부채널 분석, 인공지능 보안 등 차세대 보안 기술을 연구하고 있습니다.`
               : `At ${siteConfig.labName.en}, we research next-generation security technologies including cryptography, side-channel analysis, and AI security.`}
@@ -98,8 +98,25 @@ export default function HomeClient({ newsPosts }: { newsPosts: NewsPost[] }) {
         </div>
       </section>
 
+      {/* Lab Introduction */}
+      <section className="py-16 md:py-20 bg-[#eaf3ff] dark:bg-gray-950">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-medium text-primary-600 dark:text-primary-400 mb-2">
+              {locale === "ko" ? "연구실 소개" : "About Us"}
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              {locale === "ko" ? siteConfig.labName.ko : siteConfig.labName.en}
+            </h2>
+            <p className="text-base md:text-lg text-gray-900 dark:text-gray-300 leading-relaxed">
+              {locale === "ko" ? siteConfig.intro.ko : siteConfig.intro.en}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Lab News */}
-      <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 md:py-20 bg-[#deeeff] dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-10">
             <div>
@@ -117,7 +134,7 @@ export default function HomeClient({ newsPosts }: { newsPosts: NewsPost[] }) {
           </div>
 
           {recentPosts.length === 0 ? (
-            <p className="text-gray-400 text-center py-12">
+            <p className="text-gray-600 text-center py-12">
               {locale === "ko" ? "등록된 소식이 없습니다." : "No news yet."}
             </p>
           ) : (
@@ -126,7 +143,7 @@ export default function HomeClient({ newsPosts }: { newsPosts: NewsPost[] }) {
                 <a
                   key={post.slug}
                   href={`${basePath}/news/${post.slug}/`}
-                  className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-700 hover:-translate-y-1"
+                  className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:bg-blue-50 dark:hover:bg-blue-900/10 hover:shadow-lg transition-all border border-gray-100 dark:border-gray-700 hover:-translate-y-1"
                 >
                   {/* Thumbnail */}
                   {post.thumbnail && (
@@ -150,13 +167,13 @@ export default function HomeClient({ newsPosts }: { newsPosts: NewsPost[] }) {
                       >
                         {t(`news.${post.category}`)}
                       </span>
-                      <span className="text-xs text-gray-400">{post.date}</span>
+                      <span className="text-xs text-gray-600">{post.date}</span>
                     </div>
                     <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2">
                       {post.title[locale]}
                     </h3>
                     {post.summary && (
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1.5 line-clamp-2">
+                      <p className="text-sm text-gray-700 dark:text-gray-400 mt-1.5 line-clamp-2">
                         {post.summary[locale]}
                       </p>
                     )}

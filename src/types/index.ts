@@ -68,7 +68,7 @@ export interface Publication {
   volume?: string;
   pages?: string;
   year: number;
-  type: "international" | "domestic";
+  type: "international" | "domestic" | "patent" | "award" | "other";
   doi?: string;
   pdf?: string;
   abstract?: string;

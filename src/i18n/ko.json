@@ -10,7 +10,7 @@
   },
   "home": {
     "hero": {
-      "subtitle": "지능형 보안의 미래를 연구합니다",
+      "subtitle": "컴퓨터 보안의 미래를 연구합니다",
       "cta": "연구 분야 살펴보기"
     },
     "research": "주요 연구 분야",
@@ -41,10 +41,14 @@
     "keywords": "키워드"
   },
   "publications": {
-    "title": "논문",
+    "title": "연구 성과",
+    "papers": "논문",
     "all": "전체",
-    "international": "국제",
-    "domestic": "국내"
+    "international": "국제논문",
+    "domestic": "국내논문",
+    "patent": "특허",
+    "award": "수상",
+    "other": "기타"
   },
   "projects": {
     "title": "과제",

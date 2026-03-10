@@ -22,7 +22,7 @@ export default function NewsListClient({ posts }: { posts: NewsPost[] }) {
       <h1 className="text-3xl font-bold mb-10">{t("news.title")}</h1>
 
       {posts.length === 0 && (
-        <p className="text-gray-400 text-center py-12">
+        <p className="text-gray-600 text-center py-12">
           {locale === "ko" ? "등록된 소식이 없습니다." : "No news yet."}
         </p>
       )}
@@ -32,7 +32,7 @@ export default function NewsListClient({ posts }: { posts: NewsPost[] }) {
           <a
             key={post.slug}
             href={`${basePath}/news/${post.slug}/`}
-            className="flex gap-5 border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-sm transition-all"
+            className="flex gap-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:bg-blue-50 dark:hover:bg-blue-900/10 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-sm transition-all"
           >
             {/* Thumbnail */}
             {post.thumbnail ? (
@@ -55,13 +55,13 @@ export default function NewsListClient({ posts }: { posts: NewsPost[] }) {
                 >
                   {t(`news.${post.category}`)}
                 </span>
-                <span className="text-sm text-gray-400">{post.date}</span>
+                <span className="text-sm text-gray-600">{post.date}</span>
               </div>
               <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1 truncate">
                 {post.title[locale]}
               </h2>
               {post.summary && (
-                <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                <p className="text-sm text-gray-700 dark:text-gray-400 line-clamp-2">
                   {post.summary[locale]}
                 </p>
               )}

@@ -38,11 +38,11 @@ export default function ResearchPage() {
               <h2 className="text-2xl font-semibold mb-3">
                 {area.title[locale]}
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-800 dark:text-gray-300 leading-relaxed mb-4">
                 {area.description[locale]}
               </p>
               <div>
-                <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
+                <h4 className="text-sm font-medium text-gray-700 dark:text-gray-400 mb-2">
                   {t("research.keywords")}
                 </h4>
                 <div className="flex flex-wrap gap-2">

@@ -52,7 +52,7 @@ export default function MembersPage() {
             className={`px-4 py-2.5 text-sm font-medium border-b-2 transition-colors -mb-px ${
               tab === item.key
                 ? "border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400"
-                : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                : "border-transparent text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300"
             }`}
           >
             {item.label}
@@ -84,23 +84,23 @@ export default function MembersPage() {
               </div>
             </div>
             <h2 className="text-2xl font-bold">{professor.name[locale]}</h2>
-            <p className="text-gray-500 dark:text-gray-400 mt-1">{professor.title[locale]}</p>
+            <p className="text-gray-700 dark:text-gray-400 mt-1">{professor.title[locale]}</p>
 
             <div className="mt-6 space-y-2 text-sm">
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-2 text-gray-800 dark:text-gray-300">
                 <span className="font-medium">Email:</span>
                 <a href={`mailto:${professor.email}`} className="text-primary-600 dark:text-primary-400 hover:underline">
                   {professor.email}
                 </a>
               </div>
               {professor.phone && (
-                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                <div className="flex items-center gap-2 text-gray-800 dark:text-gray-300">
                   <span className="font-medium">Tel:</span>
                   <span>{professor.phone}</span>
                 </div>
               )}
               {professor.office && (
-                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                <div className="flex items-center gap-2 text-gray-800 dark:text-gray-300">
                   <span className="font-medium">Office:</span>
                   <span>{professor.office}</span>
                 </div>
@@ -152,10 +152,10 @@ export default function MembersPage() {
               <div className="space-y-3">
                 {professor.education.map((edu, i) => (
                   <div key={i} className="flex items-baseline gap-3">
-                    <span className="text-sm text-gray-400 font-mono w-12 shrink-0">{edu.year}</span>
+                    <span className="text-sm text-gray-600 font-mono w-12 shrink-0">{edu.year}</span>
                     <div>
                       <p className="font-medium text-gray-800 dark:text-gray-200">{edu.degree}</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{edu.institution}</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-400">{edu.institution}</p>
                     </div>
                   </div>
                 ))}
@@ -170,35 +170,15 @@ export default function MembersPage() {
               <div className="space-y-3">
                 {professor.career.map((item, i) => (
                   <div key={i} className="flex items-baseline gap-3">
-                    <span className="text-sm text-gray-400 w-28 shrink-0">{item.period}</span>
+                    <span className="text-sm text-gray-600 w-28 shrink-0">{item.period}</span>
                     <div>
                       <p className="font-medium text-gray-800 dark:text-gray-200">{item.position}</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{item.organization}</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-400">{item.organization}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </section>
-
-            {/* Awards */}
-            {professor.awards && professor.awards.length > 0 && (
-              <section>
-                <h3 className="text-xl font-semibold mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
-                  {t("members.awards")}
-                </h3>
-                <div className="space-y-3">
-                  {professor.awards.map((award, i) => (
-                    <div key={i} className="flex items-baseline gap-3">
-                      <span className="text-sm text-gray-400 font-mono w-12 shrink-0">{award.year}</span>
-                      <div>
-                        <p className="font-medium text-gray-800 dark:text-gray-200">{award.title}</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">{award.organization}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
           </div>
         </div>
       )}
@@ -208,7 +188,7 @@ export default function MembersPage() {
         <div className="space-y-12">
           {roles.map((role) => (
             <div key={role}>
-              <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-200 mb-4">
                 {t(`members.${role}`)}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -217,7 +197,7 @@ export default function MembersPage() {
                   .map((member) => (
                     <div
                       key={member.id}
-                      className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 hover:shadow-md transition-shadow"
+                      className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 hover:bg-blue-100 dark:hover:bg-blue-900/10 hover:shadow-md transition-all"
                     >
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center shrink-0">
@@ -229,13 +209,13 @@ export default function MembersPage() {
                           <h3 className="font-semibold text-gray-900 dark:text-gray-100">
                             {member.name[locale]}
                           </h3>
-                          <p className="text-xs text-gray-400 dark:text-gray-500">
+                          <p className="text-xs text-gray-600 dark:text-gray-400">
                             {t(`members.${member.role}`)} | {member.enrollYear}~
                           </p>
                         </div>
                       </div>
                       {member.email && (
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">{member.email}</p>
+                        <p className="text-xs text-gray-700 dark:text-gray-400 mt-3">{member.email}</p>
                       )}
                       {member.researchInterests && (
                         <div className="flex flex-wrap gap-1.5 mt-3">
@@ -280,9 +260,9 @@ export default function MembersPage() {
                 .map((al) => (
                   <tr key={al.id} className="border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50">
                     <td className="py-3 font-medium text-gray-800 dark:text-gray-200">{al.name[locale]}</td>
-                    <td className="py-3 text-gray-600 dark:text-gray-400">{al.degree}</td>
-                    <td className="py-3 text-gray-600 dark:text-gray-400">{al.graduationYear}</td>
-                    <td className="py-3 text-gray-600 dark:text-gray-400">
+                    <td className="py-3 text-gray-800 dark:text-gray-300">{al.degree}</td>
+                    <td className="py-3 text-gray-800 dark:text-gray-300">{al.graduationYear}</td>
+                    <td className="py-3 text-gray-800 dark:text-gray-300">
                       {al.currentAffiliation && al.currentPosition
                         ? `${al.currentAffiliation} (${al.currentPosition})`
                         : al.currentAffiliation || "-"}

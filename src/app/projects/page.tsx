@@ -63,7 +63,7 @@ export default function ProjectsPage() {
             className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
               filter === s
                 ? "bg-primary-600 text-white"
-                : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
+                : "bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
           >
             {s === "all"
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
         {filtered.map((project) => (
           <div
             key={project.id}
-            className="border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-primary-300 dark:hover:border-primary-600 transition-colors"
+            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:bg-blue-50 dark:hover:bg-blue-900/10 hover:border-primary-300 dark:hover:border-primary-600 transition-all"
           >
             <div className="flex items-start justify-between gap-4 mb-2">
               <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
@@ -93,10 +93,10 @@ export default function ProjectsPage() {
                 {t(`projects.${project.status}`)}
               </span>
             </div>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+            <p className="text-sm text-gray-700 dark:text-gray-400 mb-2">
               {project.description[locale]}
             </p>
-            <div className="flex items-center gap-4 text-xs text-gray-400">
+            <div className="flex items-center gap-4 text-xs text-gray-600">
               <span>{project.funder[locale]}</span>
               <span>{project.period}</span>
             </div>
@@ -105,7 +105,7 @@ export default function ProjectsPage() {
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-gray-400 text-center py-12">
+        <p className="text-gray-600 text-center py-12">
           {locale === "ko" ? "해당 과제가 없습니다." : "No projects found."}
         </p>
       )}

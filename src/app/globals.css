@@ -36,8 +36,8 @@ body {
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  color: var(--color-gray-800);
-  background-color: #ffffff;
+  color: #111827;
+  background-color: #fbfeff;
   transition: background-color 0.2s, color 0.2s;
 }
 

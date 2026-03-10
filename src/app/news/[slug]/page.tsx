@@ -66,7 +66,7 @@ export default async function NewsDetailPage({
   } catch {
     return (
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-        <h1 className="text-2xl font-bold text-gray-400">Post not found</h1>
+        <h1 className="text-2xl font-bold text-gray-600">Post not found</h1>
         <Link
           href="/news/"
           className="text-primary-600 dark:text-primary-400 hover:underline mt-4 inline-block"
@@ -91,7 +91,7 @@ export default async function NewsDetailPage({
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <Link
         href="/news/"
-        className="text-sm text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors mb-6 inline-block"
+        className="text-sm text-gray-600 hover:text-primary-600 dark:hover:text-primary-400 transition-colors mb-6 inline-block"
       >
         &larr; Back to News
       </Link>
@@ -104,7 +104,7 @@ export default async function NewsDetailPage({
         >
           {meta.category}
         </span>
-        <span className="text-sm text-gray-400">{meta.date}</span>
+        <span className="text-sm text-gray-600">{meta.date}</span>
       </div>
 
       <h1 className="text-3xl font-bold mb-6">{meta.title.ko}</h1>

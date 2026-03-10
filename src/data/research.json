@@ -1,39 +1,41 @@
 {
   "research": [
     {
-      "id": "cryptography",
+      "id": "crypto-side-channel",
       "title": {
-        "ko": "암호학",
-        "en": "Cryptography"
+        "ko": "암호 및 부채널 분석",
+        "en": "Cryptography & Side-Channel Analysis"
       },
       "description": {
-        "ko": "암호는 보안 기술에서 핵심 프리미티브입니다. 대칭키/공개키 암호, 양자내성 암호, 경량 암호 등 암호 알고리즘의 설계와 안전성 분석을 연구합니다.",
-        "en": "We research the design and security analysis of cryptographic algorithms including symmetric/public-key cryptography, post-quantum cryptography, and lightweight cryptography."
+        "ko": "대칭키/공개키 암호, 양자내성 암호, 경량 암호 등 암호 알고리즘의 설계와 안전성 분석을 연구합니다. 또한 암호 모듈이 탑재된 기기에서 누출되는 전력, 전자기파 등의 부채널 정보를 이용한 공격 기법과 대응 방안을 연구합니다.",
+        "en": "We research the design and security analysis of cryptographic algorithms such as symmetric/public-key cryptography, post-quantum cryptography, and lightweight cryptography. We also research attack techniques using side-channel information such as power and electromagnetic signals leaked from devices equipped with cryptographic modules, along with countermeasures."
       },
-      "image": "/images/research/cryptography.svg",
+      "image": "/images/research/crypto-side-channel.svg",
       "keywords": [
         "Post-Quantum Cryptography",
         "Lightweight Cryptography",
         "Block Cipher",
-        "Public-Key Cryptography"
+        "Power Analysis",
+        "Electromagnetic Analysis",
+        "Fault Injection"
       ]
     },
     {
-      "id": "side-channel",
+      "id": "hacking-security",
       "title": {
-        "ko": "부채널 분석",
-        "en": "Side-Channel Analysis"
+        "ko": "해킹과 보안",
+        "en": "Hacking & Security"
       },
       "description": {
-        "ko": "암호 모듈이 탑재된 전자기기가 동작할 때 발생하는 전력, 전자기파, 소리, 온도 등 다양한 부채널 정보가 누출됩니다. 이러한 정보를 이용하여 암호를 해독하는 부채널 공격 기법과 이에 대한 대응 방안을 연구합니다.",
-        "en": "We research side-channel attack techniques such as power analysis, electromagnetic analysis, and timing analysis, along with countermeasures against these attacks."
+        "ko": "시스템, 네트워크, 웹 등 다양한 환경에서의 취약점을 분석하고 해킹 기법과 방어 전략을 연구합니다. 침투 테스트, 취약점 탐지, 악성코드 분석, 보안 정책 수립 등을 포함합니다.",
+        "en": "We analyze vulnerabilities in various environments including systems, networks, and the web, and research hacking techniques and defense strategies. This includes penetration testing, vulnerability detection, malware analysis, and security policy development."
       },
-      "image": "/images/research/side-channel.svg",
+      "image": "/images/research/hacking-security.svg",
       "keywords": [
-        "Power Analysis",
-        "Electromagnetic Analysis",
-        "Fault Injection",
-        "Countermeasures"
+        "Penetration Testing",
+        "Vulnerability Analysis",
+        "Web Security",
+        "Network Security"
       ]
     },
     {
@@ -44,9 +46,9 @@
       },
       "description": {
         "ko": "인공지능을 활용한 보안 기술(AI for Security)과 인공지능 시스템 자체의 보안(Security for AI)을 연구합니다. 딥러닝 기반 부채널 분석, 취약점 자동 탐지, 적대적 공격 방어, AI 모델 보호 등을 포함합니다.",
-        "en": "We research both AI for Security and Security for AI. This includes deep learning-based side-channel analysis, automated vulnerability detection, adversarial attack defense, and AI model protection."
+        "en": "We research security technologies using artificial intelligence (AI for Security) and the security of AI systems themselves (Security for AI). This includes deep learning-based side-channel analysis, automated vulnerability detection, adversarial attack defense, and AI model protection."
       },
-      "image": "/images/research/ai-security.svg",
+      "image": "/images/research/ai-security-new.svg",
       "keywords": [
         "AI for Security",
         "Security for AI",

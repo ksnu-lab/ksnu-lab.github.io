@@ -1,7 +1,7 @@
 {
   "labName": {
-    "ko": "지능형 보안 연구실",
-    "en": "Intelligent Security Lab"
+    "ko": "컴퓨터 보안 연구실",
+    "en": "Computer Security Lab"
   },
   "university": {
     "ko": "국립군산대학교",
@@ -9,13 +9,17 @@
   },
   "department": {
     "ko": "컴퓨터정보공학과",
-    "en": "Department of Computer and Information Engineering"
+    "en": "Department of Computer Science and Information Engineering"
   },
   "address": {
-    "ko": "전북특별자치도 군산시 대학로 558 국립군산대학교 디지털정보관",
-    "en": "Digital Information Building, Kunsan National University, 558 Daehak-ro, Gunsan-si, Jeonbuk"
+    "ko": "전북특별자치도 군산시 대학로 558 국립군산대학교 디지털정보관 321호",
+    "en": "Digital Information Building 321, Kunsan National University, 558 Daehak-ro, Gunsan-si, Jeonbuk"
   },
-  "phone": "063-469-****",
+  "intro": {
+    "ko": "컴퓨터 보안 연구실은 국립군산대학교 컴퓨터정보공학과에 소속된 연구실로, 암호 및 부채널 분석, 해킹과 보안, 인공지능 보안 분야를 연구합니다. IEEE Access, ACNS 등 저명한 국내외 학술지 및 학술대회에 연구 성과를 꾸준히 발표하고 있으며, 보다 안전한 디지털 환경 구축을 목표로 연구에 매진하고 있습니다. 보안 분야에 관심 있는 대학원생 및 학부 연구생을 지속적으로 모집하고 있습니다.",
+    "en": "The Computer Security Lab is a research group in the Department of Computer Science and Information Engineering at Kunsan National University. We conduct research in cryptography and side-channel analysis, hacking and security, and AI security. Our results are regularly published in renowned venues including IEEE Access and ACNS. We are committed to building a safer digital world and welcome graduate and undergraduate students interested in security research."
+  },
+  "phone": "063-469-4559",
   "email": "dgkwon@kunsan.ac.kr",
   "banner": {
     "text": {

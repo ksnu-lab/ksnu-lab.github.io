@@ -10,7 +10,7 @@
   },
   "home": {
     "hero": {
-      "subtitle": "Pioneering the Future of Intelligent Security",
+      "subtitle": "Pioneering the Future of Computer Security",
       "cta": "Explore Research"
     },
     "research": "Research Areas",
@@ -42,9 +42,13 @@
   },
   "publications": {
     "title": "Publications",
+    "papers": "Papers",
     "all": "All",
     "international": "International",
-    "domestic": "Domestic"
+    "domestic": "Domestic",
+    "patent": "Patents",
+    "award": "Awards",
+    "other": "Others"
   },
   "projects": {
     "title": "Projects",
