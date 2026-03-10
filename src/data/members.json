@@ -1,41 +1,19 @@
 {
   "members": [
     {
-      "id": "member-1",
-      "name": { "ko": "이석사", "en": "Seoksa Lee" },
-      "photo": "/images/members/member1.jpg",
-      "email": "seoksa@korea.ac.kr",
-      "role": "phd",
-      "enrollYear": 2020,
-      "researchInterests": ["Natural Language Processing", "Large Language Models"],
-      "homepage": ""
-    },
-    {
-      "id": "member-2",
-      "name": { "ko": "박연구", "en": "Yeongu Park" },
-      "photo": "/images/members/member2.jpg",
-      "email": "yeongu@korea.ac.kr",
-      "role": "phd",
-      "enrollYear": 2021,
-      "researchInterests": ["Computer Vision", "Object Detection"]
-    },
-    {
-      "id": "member-3",
-      "name": { "ko": "최학생", "en": "Haksaeng Choi" },
-      "photo": "/images/members/member3.jpg",
-      "email": "haksaeng@korea.ac.kr",
-      "role": "ms",
-      "enrollYear": 2023,
-      "researchInterests": ["Reinforcement Learning"]
-    },
-    {
       "id": "member-4",
-      "name": { "ko": "정인턴", "en": "Intern Jeong" },
+      "name": {
+        "ko": "정인턴",
+        "en": "Intern Jeong"
+      },
       "photo": "/images/members/member4.jpg",
-      "email": "intern@korea.ac.kr",
+      "email": "temp@ksnu.ac.kr",
       "role": "undergraduate",
-      "enrollYear": 2024,
-      "researchInterests": ["Machine Learning"]
+      "enrollYear": 2026,
+      "researchInterests": [
+        "시스템 해킹",
+        "네트워크 보안"
+      ]
     }
   ]
 }
