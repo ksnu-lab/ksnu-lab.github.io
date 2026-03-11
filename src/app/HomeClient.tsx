@@ -61,7 +61,7 @@ export default function HomeClient({ newsPosts }: { newsPosts: NewsPost[] }) {
               <>
                 더 안전한 디지털 세계를 위한
                 <br />
-                <span className="text-accent-500">사이버보안</span> 연구
+                <span className="text-accent-500">사이버 보안</span> 연구
               </>
             ) : (
               <>
