@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[54523,["/pages/_next/static/chunks/702da20819e5298a.js","/pages/_next/static/chunks/ec7421b36b640426.js"],"default"]
+2:I[54523,["/pages/_next/static/chunks/702da20819e5298a.js","/pages/_next/static/chunks/ac78ba3b81acdd1a.js"],"default"]
 3:I[97367,["/pages/_next/static/chunks/ff1a16fafef87110.js","/pages/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"e8XB3hOYKe6cAEU4Lu0rO","rsc":["$","$1","c",{"children":[["$","$L2",null,{"newsPosts":[{"slug":"2026-02","title":{"ko":"2026년도 연구원 모집 안내","en":"2026년도 연구원 모집 안내"},"date":"2026-02-16","category":"announcement","summary":{"ko":"함께 연구하며 성장하고자 하는 학생들을 기다립니다.","en":"함께 연구하며 성장하고자 하는 학생들을 기다립니다."},"thumbnail":"/images/IMG_6765.png","pinned":true}]}],[["$","script","script-0",{"src":"/pages/_next/static/chunks/ec7421b36b640426.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"sjdJ9-eyWkQCTqCrWH2Jz","rsc":["$","$1","c",{"children":[["$","$L2",null,{"newsPosts":[{"slug":"2026-02","title":{"ko":"2026년도 연구원 모집 안내","en":"2026년도 연구원 모집 안내"},"date":"2026-02-16","category":"announcement","summary":{"ko":"함께 연구하며 성장하고자 하는 학생들을 기다립니다.","en":"함께 연구하며 성장하고자 하는 학생들을 기다립니다."},"thumbnail":"/images/IMG_6765.png","pinned":true}]}],[["$","script","script-0",{"src":"/pages/_next/static/chunks/ac78ba3b81acdd1a.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
