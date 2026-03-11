@@ -217,7 +217,9 @@
     {
       "id": "award-1",
       "title": "한국인터넷진흥원 원장상",
-      "authors": ["권동근"],
+      "authors": [
+        "권동근"
+      ],
       "venue": "한국정보보호학회 동계학술대회",
       "year": 2024,
       "type": "award"
@@ -225,7 +227,9 @@
     {
       "id": "award-2",
       "title": "정보보호학회장상",
-      "authors": ["권동근"],
+      "authors": [
+        "권동근"
+      ],
       "venue": "한국정보보호학회 동계학술대회",
       "year": 2024,
       "type": "award"
@@ -233,7 +237,9 @@
     {
       "id": "award-3",
       "title": "한국전자통신연구원 원장상",
-      "authors": ["권동근"],
+      "authors": [
+        "권동근"
+      ],
       "venue": "한국정보보호학회 하계학술대회",
       "year": 2023,
       "type": "award"
@@ -241,7 +247,9 @@
     {
       "id": "award-4",
       "title": "우수상",
-      "authors": ["권동근"],
+      "authors": [
+        "권동근"
+      ],
       "venue": "국가암호공모전",
       "year": 2023,
       "type": "award"
@@ -249,7 +257,9 @@
     {
       "id": "award-5",
       "title": "정보보호학회장상",
-      "authors": ["권동근"],
+      "authors": [
+        "권동근"
+      ],
       "venue": "한국정보보호학회 하계학술대회",
       "year": 2022,
       "type": "award"
@@ -257,7 +267,9 @@
     {
       "id": "award-6",
       "title": "부채널분석연구회장상",
-      "authors": ["권동근"],
+      "authors": [
+        "권동근"
+      ],
       "venue": "부채널 분석 경진대회",
       "year": 2019,
       "type": "award"
@@ -265,7 +277,9 @@
     {
       "id": "award-7",
       "title": "우수논문상",
-      "authors": ["권동근"],
+      "authors": [
+        "권동근"
+      ],
       "venue": "한국정보보호학회 동계학술대회",
       "year": 2019,
       "type": "award"
@@ -273,10 +287,25 @@
     {
       "id": "award-8",
       "title": "표창장 (최우등생)",
-      "authors": ["권동근"],
+      "authors": [
+        "권동근"
+      ],
       "venue": "고려대학교",
       "year": 2017,
       "type": "award"
+    },
+    {
+      "id": "patent-1",
+      "title": "키 재사용 기법을 이용한 부채널 분석에 대한 대응 방법 및 장치",
+      "authors": [
+        "이상진",
+        "홍득조",
+        "김희석",
+        "권동근"
+      ],
+      "venue": "특허 등록",
+      "year": 2026,
+      "type": "patent"
     }
   ]
 }
