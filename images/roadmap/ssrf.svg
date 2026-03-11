@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect x="10" y="10" width="100" height="100" rx="12" fill="#f0fdf4"/>
+  <!-- External attacker -->
+  <circle cx="25" cy="30" r="9" fill="#fecaca" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="25" y="34" text-anchor="middle" font-size="7" fill="#dc2626">ATK</text>
+  <!-- Web server -->
+  <rect x="55" y="20" width="35" height="22" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="72" y="34" text-anchor="middle" font-size="7" font-weight="bold" fill="#166534">Server</text>
+  <!-- Internal network boundary -->
+  <rect x="40" y="55" width="65" height="42" rx="6" fill="none" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 2"/>
+  <text x="72" y="65" text-anchor="middle" font-size="6" fill="#6b7280">Internal Network</text>
+  <!-- Internal services -->
+  <rect x="45" y="72" width="24" height="18" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="57" y="84" text-anchor="middle" font-size="6" fill="#1e40af">DB</text>
+  <rect x="75" y="72" width="24" height="18" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="87" y="84" text-anchor="middle" font-size="6" fill="#1e40af">API</text>
+  <!-- Attack flow -->
+  <path d="M34 28 L53 28" stroke="#ef4444" stroke-width="1.5"/>
+  <polygon points="51,26 51,30 55,28" fill="#ef4444"/>
+  <!-- Server to internal -->
+  <path d="M72 42 L57 70" stroke="#ef4444" stroke-width="2" stroke-dasharray="3 2"/>
+  <polygon points="55,67 59,67 57,71" fill="#ef4444"/>
+</svg>

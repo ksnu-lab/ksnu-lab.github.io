@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect x="10" y="10" width="100" height="100" rx="12" fill="#faf5ff"/>
+  <!-- Bar chart -->
+  <line x1="20" y1="90" x2="105" y2="90" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="20" y1="25" x2="20" y2="90" stroke="#9ca3af" stroke-width="1"/>
+  <!-- Bars with varying heights -->
+  <rect x="25" y="35" width="8" height="55" rx="2" fill="#7c3aed" opacity="0.9"/>
+  <rect x="36" y="58" width="8" height="32" rx="2" fill="#7c3aed" opacity="0.7"/>
+  <rect x="47" y="65" width="8" height="25" rx="2" fill="#7c3aed" opacity="0.6"/>
+  <rect x="58" y="50" width="8" height="40" rx="2" fill="#7c3aed" opacity="0.8"/>
+  <rect x="69" y="72" width="8" height="18" rx="2" fill="#7c3aed" opacity="0.5"/>
+  <rect x="80" y="45" width="8" height="45" rx="2" fill="#7c3aed" opacity="0.85"/>
+  <rect x="91" y="78" width="8" height="12" rx="2" fill="#7c3aed" opacity="0.4"/>
+  <!-- Letter labels -->
+  <text x="29" y="100" text-anchor="middle" font-size="7" font-family="monospace" fill="#5b21b6">E</text>
+  <text x="40" y="100" text-anchor="middle" font-size="7" font-family="monospace" fill="#5b21b6">T</text>
+  <text x="51" y="100" text-anchor="middle" font-size="7" font-family="monospace" fill="#5b21b6">A</text>
+  <text x="62" y="100" text-anchor="middle" font-size="7" font-family="monospace" fill="#5b21b6">O</text>
+  <text x="73" y="100" text-anchor="middle" font-size="7" font-family="monospace" fill="#5b21b6">I</text>
+  <text x="84" y="100" text-anchor="middle" font-size="7" font-family="monospace" fill="#5b21b6">N</text>
+  <text x="95" y="100" text-anchor="middle" font-size="7" font-family="monospace" fill="#5b21b6">S</text>
+  <!-- Highlight highest bar -->
+  <path d="M29 30 L29 22" stroke="#ef4444" stroke-width="1.5"/>
+  <polygon points="26,24 32,24 29,20" fill="#ef4444"/>
+  <!-- Ciphertext line -->
+  <text x="60" y="20" text-anchor="middle" font-size="7" font-family="monospace" fill="#9ca3af">XQJK...</text>
+</svg>
