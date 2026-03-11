@@ -5,7 +5,7 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
-    default: "사이버보안 연구실 | Cyber Security Lab",
+    default: "사이버 보안 연구실 | Cyber Security Lab",
     template: "%s | SecLab",
   },
   description:
