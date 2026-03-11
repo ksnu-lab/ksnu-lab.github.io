@@ -10,6 +10,7 @@ const navItems = [
   { key: "home", href: "/" },
   { key: "members", href: "/members" },
   { key: "research", href: "/research" },
+  { key: "roadmap", href: "/roadmap" },
   { key: "publications", href: "/publications" },
   { key: "projects", href: "/projects" },
   { key: "news", href: "/news" },
@@ -48,8 +49,8 @@ export default function Header() {
                 <rect x="19.5" y="26" width="3" height="2.5" rx="1" fill="white"/>
               </g>
             </svg>
-            <span className="text-lg font-bold text-gray-900 dark:text-white">
-              {locale === "ko" ? "컴퓨터 보안 연구실" : "SecLab"}
+            <span className="text-lg font-bold text-gray-900 dark:text-white whitespace-nowrap">
+              Security Lab
             </span>
           </Link>
 

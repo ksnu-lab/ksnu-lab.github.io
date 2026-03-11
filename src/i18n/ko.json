@@ -6,7 +6,8 @@
     "publications": "연구 성과",
     "projects": "프로젝트",
     "news": "연구실 소식",
-    "support": "지원 안내"
+    "support": "지원 안내",
+    "roadmap": "해킹 기술"
   },
   "home": {
     "hero": {
@@ -69,6 +70,10 @@
     "phone": "전화",
     "email": "이메일",
     "directions": "찾아오는 길"
+  },
+  "roadmap": {
+    "title": "해킹 기술",
+    "subtitle": "컴퓨터 보안의 주요 해킹 기술과 암호 분석 기법을 알아보세요."
   },
   "footer": {
     "copyright": "All rights reserved."

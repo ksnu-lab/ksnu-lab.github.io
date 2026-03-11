@@ -205,6 +205,55 @@ collections:
                 widget: "list"
                 field: { label: "키워드", name: "keyword", widget: "string" }
 
+  # ── 해킹 기술 ──
+  - name: "roadmap"
+    label: "해킹 기술"
+    files:
+      - name: "roadmapData"
+        label: "보안 기술 소개"
+        file: "src/data/roadmap.json"
+        fields:
+          - label: "분야"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.title.ko}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string", hint: "고유 식별자 (예: system-hacking)" }
+              - label: "분야명"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "한국어", name: "ko", widget: "string" }
+                  - { label: "English", name: "en", widget: "string" }
+              - label: "색상"
+                name: "color"
+                widget: "select"
+                options:
+                  - { label: "빨강", value: "red" }
+                  - { label: "파랑", value: "blue" }
+                  - { label: "초록", value: "green" }
+                  - { label: "보라", value: "purple" }
+                default: "blue"
+              - label: "기술 목록"
+                name: "techniques"
+                widget: "list"
+                summary: "{{fields.name.ko}}"
+                fields:
+                  - { label: "ID", name: "id", widget: "string", hint: "고유 식별자 (예: buffer-overflow)" }
+                  - label: "기술명"
+                    name: "name"
+                    widget: "object"
+                    fields:
+                      - { label: "한국어", name: "ko", widget: "string" }
+                      - { label: "English", name: "en", widget: "string" }
+                  - label: "설명"
+                    name: "description"
+                    widget: "object"
+                    fields:
+                      - { label: "한국어", name: "ko", widget: "text" }
+                      - { label: "English", name: "en", widget: "text" }
+                  - { label: "이미지", name: "image", widget: "image" }
+
   # ── 연구 성과 ──
   - name: "publications"
     label: "연구 성과"

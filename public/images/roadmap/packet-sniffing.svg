@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect x="10" y="10" width="100" height="100" rx="12" fill="#eff6ff"/>
+  <!-- Network line -->
+  <line x1="15" y1="55" x2="105" y2="55" stroke="#93c5fd" stroke-width="3"/>
+  <!-- Packets on wire -->
+  <rect x="20" y="48" width="18" height="14" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="29" y="58" text-anchor="middle" font-size="6" font-family="monospace" fill="#1e40af">PKT</text>
+  <rect x="50" y="48" width="18" height="14" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="59" y="58" text-anchor="middle" font-size="6" font-family="monospace" fill="#1e40af">PKT</text>
+  <rect x="80" y="48" width="18" height="14" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="89" y="58" text-anchor="middle" font-size="6" font-family="monospace" fill="#1e40af">PKT</text>
+  <!-- Sniffer eye -->
+  <ellipse cx="60" cy="28" rx="16" ry="10" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <circle cx="60" cy="28" r="5" fill="#ef4444"/>
+  <circle cx="60" cy="28" r="2" fill="white"/>
+  <!-- Capture lines -->
+  <path d="M29 48 L50 35" stroke="#ef4444" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  <path d="M59 48 L60 38" stroke="#ef4444" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  <path d="M89 48 L70 35" stroke="#ef4444" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+  <!-- Captured data -->
+  <rect x="25" y="75" width="70" height="25" rx="4" fill="#1f2937"/>
+  <text x="32" y="86" font-size="6" font-family="monospace" fill="#22c55e">pass: ****</text>
+  <text x="32" y="95" font-size="6" font-family="monospace" fill="#22c55e">cookie: abc</text>
+</svg>

@@ -108,4 +108,18 @@ export interface SiteConfig {
   };
 }
 
+export interface Technique {
+  id: string;
+  name: LocalizedString;
+  description: LocalizedString;
+  image: string;
+}
+
+export interface RoadmapCategory {
+  id: string;
+  title: LocalizedString;
+  color: string;
+  techniques: Technique[];
+}
+
 export type Locale = "ko" | "en";

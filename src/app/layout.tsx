@@ -5,11 +5,11 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
-    default: "컴퓨터 보안 연구실 | Computer Security Lab",
+    default: "사이버 보안 연구실 | Computer Security Lab",
     template: "%s | SecLab",
   },
   description:
-    "국립군산대학교 컴퓨터정보공학과 컴퓨터 보안 연구실. 암호 및 부채널 분석, 인공지능 보안, 해킹 및 보안을 연구합니다.",
+    "국립군산대학교 컴퓨터정보공학과 사이버 보안 연구실. 암호 및 부채널 분석, 해킹 및 보안, 인공지능 보안 등, 정보보안 기술을 연구합니다.",
 };
 
 export default function RootLayout({

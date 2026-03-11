@@ -9,16 +9,16 @@
   },
   "photo": "/images/IMG_6125.jpeg",
   "email": "dgkwon@kunsan.ac.kr",
-  "phone": "063-***-****",
-  "office": "디지털정보관 3**호",
+  "phone": "063-469-4559",
+  "office": "디지털정보관 321호",
   "education": [
     {
-      "degree": "Ph.D. in Information Security",
+      "degree": "Ph.D. in CyberSecurity",
       "institution": "고려대학교 정보보호대학원",
       "year": 2025
     },
     {
-      "degree": "M.S. in Information Security",
+      "degree": "M.S. in CyberSecurity",
       "institution": "고려대학교 정보보호대학원",
       "year": 2020
     },

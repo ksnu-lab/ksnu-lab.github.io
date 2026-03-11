@@ -61,7 +61,7 @@ export default function HomeClient({ newsPosts }: { newsPosts: NewsPost[] }) {
               <>
                 더 안전한 디지털 세계를 위한
                 <br />
-                <span className="text-accent-500">컴퓨터 보안</span> 연구
+                <span className="text-accent-500">사이버 보안</span> 연구
               </>
             ) : (
               <>
@@ -99,7 +99,7 @@ export default function HomeClient({ newsPosts }: { newsPosts: NewsPost[] }) {
       </section>
 
       {/* Lab Introduction */}
-      <section className="py-16 md:py-20 bg-[#eaf3ff] dark:bg-gray-950">
+      <section className="py-16 md:py-20 bg-[#fafcfe] dark:bg-gray-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-medium text-primary-600 dark:text-primary-400 mb-2">
@@ -116,7 +116,7 @@ export default function HomeClient({ newsPosts }: { newsPosts: NewsPost[] }) {
       </section>
 
       {/* Lab News */}
-      <section className="py-16 md:py-20 bg-[#deeeff] dark:bg-gray-900">
+      <section className="py-16 md:py-20 bg-[#eef3fb] dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-10">
             <div>

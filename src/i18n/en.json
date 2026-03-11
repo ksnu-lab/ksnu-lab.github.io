@@ -6,7 +6,8 @@
     "publications": "Publications",
     "projects": "Projects",
     "news": "News",
-    "support": "Support"
+    "support": "Support",
+    "roadmap": "Hacking"
   },
   "home": {
     "hero": {
@@ -69,6 +70,10 @@
     "phone": "Phone",
     "email": "Email",
     "directions": "Directions"
+  },
+  "roadmap": {
+    "title": "Hacking Techniques",
+    "subtitle": "Explore key hacking techniques and cryptanalysis methods in computer security."
   },
   "footer": {
     "copyright": "All rights reserved."
