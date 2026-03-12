@@ -1,7 +1,7 @@
 {
   "labName": {
     "ko": "사이버 보안 연구실",
-    "en": "Cyber Security Lab"
+    "en": "Computer Security Lab"
   },
   "university": {
     "ko": "국립군산대학교",
@@ -17,7 +17,7 @@
   },
   "intro": {
     "ko": "사이버 보안 연구실은 국립군산대학교 컴퓨터정보공학과에 소속된 연구실로, 암호 및 부채널 분석, 해킹과 보안, 인공지능 보안 등, 정보보안 분야를 연구합니다. ACNS, IEEE 등 국제 학술지 및 학술대회에 연구 성과를 꾸준히 발표하고 있으며, 보다 안전한 디지털 환경 구축을 목표로 연구에 매진하고 있습니다. 또한, 보안 분야의 다양한 연구 프로젝트를 수행하고 있습니다. 보안 분야에 관심 있는 대학원생 및 학부 연구생을 지속적으로 모집하고 있습니다.",
-    "en": "Welcome to the Cybersecurity Lab at Kunsan National University. Based in the Department of Computer and Information Engineering, we specialize in information security, focusing on areas like cryptography, side-channel analysis, hacking, and AI security. Our team regularly presents research at top-tier global venues such as ACNS and IEEE, working toward the goal of a more secure digital world. We manage various research projects and are always looking for talented graduate and undergraduate students to join our journey."
+    "en": "Welcome to the Computer Security Lab at Kunsan National University. Based in the Department of Computer and Information Engineering, we specialize in information security, focusing on areas like cryptography, side-channel analysis, hacking, and AI security. Our team regularly presents research at top-tier global venues such as ACNS and IEEE, working toward the goal of a more secure digital world. We manage various research projects and are always looking for talented graduate and undergraduate students to join our journey."
   },
   "phone": "063-469-4559",
   "email": "dgkwon@kunsan.ac.kr",

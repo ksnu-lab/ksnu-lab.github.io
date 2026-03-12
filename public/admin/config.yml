@@ -259,16 +259,16 @@ collections:
     label: "연구 성과"
     files:
       - name: "publicationsList"
-        label: "논문 목록"
+        label: "연구 성과 관리"
         file: "src/data/publications.json"
         fields:
-          - label: "논문 목록"
-            name: "publications"
+          - label: "논문"
+            name: "papers"
             widget: "list"
             summary: "{{fields.title}} ({{fields.year}})"
             fields:
               - { label: "ID", name: "id", widget: "string", required: true, hint: "고유 식별자 (예: pub-16)" }
-              - { label: "논문 제목", name: "title", widget: "string", required: true }
+              - { label: "제목", name: "title", widget: "string", required: true }
               - label: "저자"
                 name: "authors"
                 widget: "list"
@@ -281,10 +281,46 @@ collections:
                 options:
                   - { label: "국제 논문", value: "international" }
                   - { label: "국내 논문", value: "domestic" }
-                  - { label: "특허", value: "patent" }
-                  - { label: "수상", value: "award" }
-                  - { label: "기타", value: "other" }
                 default: "international"
+          - label: "수상"
+            name: "awards"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.year}})"
+            fields:
+              - { label: "ID", name: "id", widget: "string", required: true, hint: "고유 식별자 (예: award-9)" }
+              - { label: "수상명", name: "title", widget: "string", required: true }
+              - label: "수상자"
+                name: "authors"
+                widget: "list"
+                field: { label: "이름", name: "author", widget: "string" }
+              - { label: "수여기관/학회", name: "venue", widget: "string", required: true }
+              - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
+          - label: "특허"
+            name: "patents"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.year}})"
+            fields:
+              - { label: "ID", name: "id", widget: "string", required: true, hint: "고유 식별자 (예: patent-1)" }
+              - { label: "특허명", name: "title", widget: "string", required: true }
+              - label: "발명자"
+                name: "authors"
+                widget: "list"
+                field: { label: "이름", name: "author", widget: "string" }
+              - { label: "출원기관", name: "venue", widget: "string", required: true }
+              - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
+          - label: "기타"
+            name: "others"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.year}})"
+            fields:
+              - { label: "ID", name: "id", widget: "string", required: true, hint: "고유 식별자 (예: other-1)" }
+              - { label: "제목", name: "title", widget: "string", required: true }
+              - label: "관련자"
+                name: "authors"
+                widget: "list"
+                field: { label: "이름", name: "author", widget: "string" }
+              - { label: "출처/기관", name: "venue", widget: "string", required: true }
+              - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
 
   # ── 프로젝트 ──
   - name: "projects"

@@ -5,7 +5,10 @@ import { useTranslation } from "@/i18n";
 import publicationsJson from "@/data/publications.json";
 import type { Publication } from "@/types";
 
-const publications = publicationsJson.publications as Publication[];
+const papers = publicationsJson.papers as Publication[];
+const awards = (publicationsJson.awards as Omit<Publication, "type">[]);
+const patents = (publicationsJson.patents as Omit<Publication, "type">[]);
+const others = (publicationsJson.others as Omit<Publication, "type">[]);
 
 type MainFilter = "papers" | "award" | "patent" | "other";
 type SubFilter = "all" | "international" | "domestic";
@@ -18,14 +21,17 @@ export default function PublicationsPage() {
   const [mainFilter, setMainFilter] = useState<MainFilter>("papers");
   const [subFilter, setSubFilter] = useState<SubFilter>("all");
 
-  const filtered = publications.filter((p) => {
+  const getItems = () => {
     if (mainFilter === "papers") {
-      if (subFilter === "all") return p.type === "international" || p.type === "domestic";
-      return p.type === subFilter;
+      if (subFilter === "all") return papers;
+      return papers.filter((p) => p.type === subFilter);
     }
-    return p.type === mainFilter;
-  });
+    if (mainFilter === "award") return awards;
+    if (mainFilter === "patent") return patents;
+    return others;
+  };
 
+  const filtered = getItems();
   const years = [...new Set(filtered.map((p) => p.year))].sort((a, b) => b - a);
 
   return (
