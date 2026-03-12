@@ -31,7 +31,7 @@ export function getAlumni(): Alumni[] {
 }
 
 export function getPublications(): Publication[] {
-  return publicationsJson.publications as Publication[];
+  return publicationsJson.papers as Publication[];
 }
 
 export function getPublicationsByYear(): Record<number, Publication[]> {
