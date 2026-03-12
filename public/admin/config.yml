@@ -258,11 +258,11 @@ collections:
   - name: "publications"
     label: "연구 성과"
     files:
-      - name: "publicationsList"
-        label: "연구 성과 관리"
-        file: "src/data/publications.json"
+      - name: "papers"
+        label: "논문 성과"
+        file: "src/data/papers.json"
         fields:
-          - label: "논문"
+          - label: "논문 목록"
             name: "papers"
             widget: "list"
             summary: "{{fields.title}} ({{fields.year}})"
@@ -282,7 +282,11 @@ collections:
                   - { label: "국제 논문", value: "international" }
                   - { label: "국내 논문", value: "domestic" }
                 default: "international"
-          - label: "수상"
+      - name: "awards"
+        label: "수상 성과"
+        file: "src/data/awards.json"
+        fields:
+          - label: "수상 목록"
             name: "awards"
             widget: "list"
             summary: "{{fields.title}} ({{fields.year}})"
@@ -295,7 +299,11 @@ collections:
                 field: { label: "이름", name: "author", widget: "string" }
               - { label: "수여기관/학회", name: "venue", widget: "string", required: true }
               - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
-          - label: "특허"
+      - name: "patents"
+        label: "특허 성과"
+        file: "src/data/patents.json"
+        fields:
+          - label: "특허 목록"
             name: "patents"
             widget: "list"
             summary: "{{fields.title}} ({{fields.year}})"
@@ -308,7 +316,11 @@ collections:
                 field: { label: "이름", name: "author", widget: "string" }
               - { label: "출원기관", name: "venue", widget: "string", required: true }
               - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
-          - label: "기타"
+      - name: "others"
+        label: "기타 성과"
+        file: "src/data/others.json"
+        fields:
+          - label: "기타 목록"
             name: "others"
             widget: "list"
             summary: "{{fields.title}} ({{fields.year}})"

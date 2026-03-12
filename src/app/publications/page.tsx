@@ -2,13 +2,16 @@
 
 import { useState } from "react";
 import { useTranslation } from "@/i18n";
-import publicationsJson from "@/data/publications.json";
+import papersJson from "@/data/papers.json";
+import awardsJson from "@/data/awards.json";
+import patentsJson from "@/data/patents.json";
+import othersJson from "@/data/others.json";
 import type { Publication } from "@/types";
 
-const papers = publicationsJson.papers as Publication[];
-const awards = (publicationsJson.awards as Omit<Publication, "type">[]);
-const patents = (publicationsJson.patents as Omit<Publication, "type">[]);
-const others = (publicationsJson.others as Omit<Publication, "type">[]);
+const papers = papersJson.papers as Publication[];
+const awards = awardsJson.awards as Omit<Publication, "type">[];
+const patents = patentsJson.patents as Omit<Publication, "type">[];
+const others = othersJson.others as Omit<Publication, "type">[];
 
 type MainFilter = "papers" | "award" | "patent" | "other";
 type SubFilter = "all" | "international" | "domestic";

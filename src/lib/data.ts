@@ -11,7 +11,7 @@ import siteConfigData from "@/data/siteConfig.json";
 import professorData from "@/data/professor.json";
 import membersJson from "@/data/members.json";
 import alumniJson from "@/data/alumni.json";
-import publicationsJson from "@/data/publications.json";
+import papersJson from "@/data/papers.json";
 import researchJson from "@/data/research.json";
 
 export function getSiteConfig(): SiteConfig {
@@ -31,7 +31,7 @@ export function getAlumni(): Alumni[] {
 }
 
 export function getPublications(): Publication[] {
-  return publicationsJson.papers as Publication[];
+  return papersJson.papers as Publication[];
 }
 
 export function getPublicationsByYear(): Record<number, Publication[]> {

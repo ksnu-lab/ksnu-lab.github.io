@@ -26,10 +26,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme") as Theme | null;
-    const initial = (saved === "dark" || saved === "light") ? saved : "dark";
-    setTheme(initial);
-    document.documentElement.classList.toggle("dark", initial === "dark");
+    document.documentElement.classList.add("dark");
   }, []);
 
   const toggleTheme = useCallback(() => {
