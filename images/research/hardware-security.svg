@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <defs>
+    <linearGradient id="bg-hw" x1="0" y1="0" x2="400" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#ffedd5"/>
+    </linearGradient>
+    <linearGradient id="accent-hw" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" rx="16" fill="url(#bg-hw)"/>
+
+  <!-- Central chip body -->
+  <rect x="152" y="72" width="96" height="96" rx="7" fill="url(#accent-hw)" opacity="0.85"/>
+  <!-- Inner die -->
+  <rect x="165" y="85" width="70" height="70" rx="4" fill="#7c2d12" opacity="0.50"/>
+  <!-- Chip label -->
+  <text x="200" y="116" font-family="monospace" font-size="9.5" fill="#fed7aa" text-anchor="middle" opacity="0.9">CRYPTO</text>
+  <text x="200" y="130" font-family="monospace" font-size="9.5" fill="#fed7aa" text-anchor="middle" opacity="0.9">ENGINE</text>
+
+  <!-- Pins left -->
+  <rect x="138" y="86"  width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="138" y="97"  width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="138" y="108" width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="138" y="119" width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="138" y="130" width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="138" y="141" width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="138" y="152" width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+
+  <!-- Pins right -->
+  <rect x="248" y="86"  width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="248" y="97"  width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="248" y="108" width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="248" y="119" width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="248" y="130" width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="248" y="141" width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="248" y="152" width="14" height="5" rx="1" fill="#ea580c" opacity="0.7"/>
+
+  <!-- Pins top -->
+  <rect x="165" y="58" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="176" y="58" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="187" y="58" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="198" y="58" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="209" y="58" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="220" y="58" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="231" y="58" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+
+  <!-- Pins bottom -->
+  <rect x="165" y="168" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="176" y="168" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="187" y="168" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="198" y="168" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="209" y="168" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="220" y="168" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+  <rect x="231" y="168" width="5" height="14" rx="1" fill="#ea580c" opacity="0.7"/>
+
+  <!-- Power waveform at bottom (like crypto SVG) -->
+  <polyline points="38,208 52,208 56,193 61,220 67,196 72,210 78,198 84,216 90,192 97,208 104,200 112,210 120,194 128,208 145,208 150,190 156,222 163,196 170,210 178,192 185,218 193,198 200,208 208,193 216,220 224,196 232,210 248,210 254,192 260,224 267,195 274,210 281,194 288,220 296,198 303,210 310,198 318,210 325,208 342,208 348,194 354,216 360,208" stroke="#ea580c" stroke-width="1.8" fill="none" opacity="0.55"/>
+
+  <!-- EM arcs radiating left of chip (like crypto SVG) -->
+  <path d="M152 98 Q134 82 152 66" stroke="#f97316" stroke-width="1.5" fill="none" opacity="0.38"/>
+  <path d="M152 98 Q124 76 152 54" stroke="#f97316" stroke-width="1.5" fill="none" opacity="0.26"/>
+  <path d="M152 98 Q114 70 152 42" stroke="#f97316" stroke-width="1.5" fill="none" opacity="0.16"/>
+
+  <!-- Key icon bottom-left (like crypto SVG) -->
+  <g transform="translate(72,200) rotate(-20)" opacity="0.42">
+    <circle cx="0" cy="0" r="10" stroke="#ea580c" stroke-width="2" fill="none"/>
+    <line x1="10" y1="0" x2="36" y2="0" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+    <line x1="28" y1="0" x2="28" y2="7" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+    <line x1="34" y1="0" x2="34" y2="5" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- IC / chip outline icon top-right (decorative) -->
+  <g transform="translate(318,84)" opacity="0.38">
+    <rect x="-16" y="-16" width="32" height="32" rx="4" stroke="#c2410c" stroke-width="2" fill="none"/>
+    <line x1="-16" y1="-6" x2="-20" y2="-6" stroke="#c2410c" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-16" y1="0"  x2="-20" y2="0"  stroke="#c2410c" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-16" y1="6"  x2="-20" y2="6"  stroke="#c2410c" stroke-width="2" stroke-linecap="round"/>
+    <line x1="16"  y1="-6" x2="20"  y2="-6" stroke="#c2410c" stroke-width="2" stroke-linecap="round"/>
+    <line x1="16"  y1="0"  x2="20"  y2="0"  stroke="#c2410c" stroke-width="2" stroke-linecap="round"/>
+    <line x1="16"  y1="6"  x2="20"  y2="6"  stroke="#c2410c" stroke-width="2" stroke-linecap="round"/>
+    <rect x="-6" y="-6" width="12" height="12" rx="2" stroke="#c2410c" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- Corner dots -->
+  <circle cx="48"  cy="45"  r="2"   fill="#fb923c" opacity="0.4"/>
+  <circle cx="355" cy="40"  r="2"   fill="#fb923c" opacity="0.4"/>
+  <circle cx="42"  cy="230" r="2"   fill="#fb923c" opacity="0.3"/>
+  <circle cx="358" cy="228" r="2"   fill="#fb923c" opacity="0.3"/>
+  <circle cx="200" cy="32"  r="1.5" fill="#fb923c" opacity="0.3"/>
+</svg>

@@ -269,10 +269,7 @@ collections:
             fields:
               - { label: "ID", name: "id", widget: "string", required: true, hint: "고유 식별자 (예: pub-16)" }
               - { label: "제목", name: "title", widget: "string", required: true }
-              - label: "저자"
-                name: "authors"
-                widget: "list"
-                field: { label: "저자명", name: "author", widget: "string" }
+              - { label: "저자", name: "authors", widget: "string", required: false, hint: "예: 홍길동, 김철수, 이영희" }
               - { label: "학술지/학회", name: "venue", widget: "string", required: true }
               - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
               - label: "구분"
@@ -293,10 +290,7 @@ collections:
             fields:
               - { label: "ID", name: "id", widget: "string", required: true, hint: "고유 식별자 (예: award-9)" }
               - { label: "수상명", name: "title", widget: "string", required: true }
-              - label: "수상자"
-                name: "authors"
-                widget: "list"
-                field: { label: "이름", name: "author", widget: "string" }
+              - { label: "수상자", name: "authors", widget: "string", required: false, hint: "예: 홍길동, 김철수" }
               - { label: "수여기관/학회", name: "venue", widget: "string", required: true }
               - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
       - name: "patents"
@@ -310,10 +304,7 @@ collections:
             fields:
               - { label: "ID", name: "id", widget: "string", required: true, hint: "고유 식별자 (예: patent-1)" }
               - { label: "특허명", name: "title", widget: "string", required: true }
-              - label: "발명자"
-                name: "authors"
-                widget: "list"
-                field: { label: "이름", name: "author", widget: "string" }
+              - { label: "발명자", name: "authors", widget: "string", required: false, hint: "예: 홍길동, 김철수" }
               - { label: "출원기관", name: "venue", widget: "string", required: true }
               - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
       - name: "others"
@@ -327,10 +318,7 @@ collections:
             fields:
               - { label: "ID", name: "id", widget: "string", required: true, hint: "고유 식별자 (예: other-1)" }
               - { label: "제목", name: "title", widget: "string", required: true }
-              - label: "관련자"
-                name: "authors"
-                widget: "list"
-                field: { label: "이름", name: "author", widget: "string" }
+              - { label: "관련자", name: "authors", widget: "string", required: false, hint: "예: 홍길동, 김철수" }
               - { label: "출처/기관", name: "venue", widget: "string", required: true }
               - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
 
@@ -369,68 +357,101 @@ collections:
                   - { label: "English", name: "en", widget: "text", required: false }
 
   # ── 연구실 소식 ──
-  - name: "news"
-    label: "연구실 소식"
-    folder: "src/content/news"
-    create: true
-    slug: "{{year}}-{{month}}-{{slug}}"
-    identifier_field: "title_ko"
-    extension: "mdx"
-    format: "frontmatter"
-    fields:
-      - label: "제목 (한국어)"
-        name: "title_ko"
-        widget: "string"
-        required: true
+  - name: "news-announcement"
+    label: "연구실 소식 — 공지"
+    files:
+      - name: "announcementPosts"
+        label: "공지 목록"
+        file: "src/data/news-announcement.json"
+        fields:
+          - label: "공지 목록"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title_ko}} ({{fields.date}})"
+            fields:
+              - { label: "ID (슬러그)", name: "id", widget: "string", hint: "영문·숫자·하이픈만 사용 (예: ann-2026-01)" }
+              - { label: "제목 (한국어)", name: "title_ko", widget: "string" }
+              - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+              - { label: "날짜", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "요약 (한국어)", name: "summary_ko", widget: "string", required: false }
+              - { label: "Summary (English)", name: "summary_en", widget: "string", required: false }
+              - { label: "본문 (한국어)", name: "body_ko", widget: "markdown", required: false }
+              - { label: "Body (English)", name: "body_en", widget: "markdown", required: false }
+              - { label: "썸네일", name: "thumbnail", widget: "image", required: false }
+              - { label: "외부 링크", name: "link", widget: "string", required: false, hint: "클릭 시 이동할 외부 URL (선택)" }
+              - { label: "홈 고정", name: "pinned", widget: "boolean", default: false, required: false }
 
-      - label: "Title (English)"
-        name: "title_en"
-        widget: "string"
-        required: false
+  - name: "news-research"
+    label: "연구실 소식 — 연구내용"
+    files:
+      - name: "researchPosts"
+        label: "연구내용 목록"
+        file: "src/data/news-research.json"
+        fields:
+          - label: "연구내용 목록"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title_ko}} ({{fields.date}})"
+            fields:
+              - { label: "ID (슬러그)", name: "id", widget: "string", hint: "영문·숫자·하이픈만 사용 (예: research-2026-01)" }
+              - { label: "제목 (한국어)", name: "title_ko", widget: "string" }
+              - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+              - { label: "날짜", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "요약 (한국어)", name: "summary_ko", widget: "string", required: false }
+              - { label: "Summary (English)", name: "summary_en", widget: "string", required: false }
+              - { label: "본문 (한국어)", name: "body_ko", widget: "markdown", required: false }
+              - { label: "Body (English)", name: "body_en", widget: "markdown", required: false }
+              - { label: "썸네일", name: "thumbnail", widget: "image", required: false }
+              - { label: "외부 링크", name: "link", widget: "string", required: false }
+              - { label: "홈 고정", name: "pinned", widget: "boolean", default: false, required: false }
 
-      - label: "날짜"
-        name: "date"
-        widget: "datetime"
-        format: "YYYY-MM-DD"
-        date_format: "YYYY-MM-DD"
-        time_format: false
+  - name: "news-seminar"
+    label: "연구실 소식 — 세미나"
+    files:
+      - name: "seminarPosts"
+        label: "세미나 목록"
+        file: "src/data/news-seminar.json"
+        fields:
+          - label: "세미나 목록"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title_ko}} ({{fields.date}})"
+            fields:
+              - { label: "ID (슬러그)", name: "id", widget: "string", hint: "영문·숫자·하이픈만 사용 (예: seminar-2026-01)" }
+              - { label: "제목 (한국어)", name: "title_ko", widget: "string" }
+              - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+              - { label: "날짜", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "요약 (한국어)", name: "summary_ko", widget: "string", required: false }
+              - { label: "Summary (English)", name: "summary_en", widget: "string", required: false }
+              - { label: "본문 (한국어)", name: "body_ko", widget: "markdown", required: false }
+              - { label: "Body (English)", name: "body_en", widget: "markdown", required: false }
+              - { label: "썸네일", name: "thumbnail", widget: "image", required: false }
+              - { label: "외부 링크", name: "link", widget: "string", required: false }
+              - { label: "홈 고정", name: "pinned", widget: "boolean", default: false, required: false }
 
-      - label: "카테고리"
-        name: "category"
-        widget: "select"
-        options:
-          - { label: "공지", value: "announcement" }
-          - { label: "논문", value: "publication" }
-          - { label: "수상", value: "award" }
-          - { label: "행사", value: "event" }
-          - { label: "일반", value: "general" }
-        default: "general"
-
-      - label: "요약 (한국어)"
-        name: "summary_ko"
-        widget: "string"
-        required: false
-
-      - label: "Summary (English)"
-        name: "summary_en"
-        widget: "string"
-        required: false
-
-      - label: "썸네일"
-        name: "thumbnail"
-        widget: "image"
-        required: false
-
-      - label: "홈페이지 고정"
-        name: "pinned"
-        widget: "boolean"
-        default: false
-        required: false
-        hint: "활성화하면 홈페이지 소식 목록 맨 앞에 고정됩니다"
-
-      - label: "본문"
-        name: "body"
-        widget: "markdown"
+  - name: "news-general"
+    label: "연구실 소식 — 일반"
+    files:
+      - name: "generalPosts"
+        label: "일반 목록"
+        file: "src/data/news-general.json"
+        fields:
+          - label: "일반 목록"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title_ko}} ({{fields.date}})"
+            fields:
+              - { label: "ID (슬러그)", name: "id", widget: "string", hint: "영문·숫자·하이픈만 사용 (예: general-2026-01)" }
+              - { label: "제목 (한국어)", name: "title_ko", widget: "string" }
+              - { label: "Title (English)", name: "title_en", widget: "string", required: false }
+              - { label: "날짜", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "요약 (한국어)", name: "summary_ko", widget: "string", required: false }
+              - { label: "Summary (English)", name: "summary_en", widget: "string", required: false }
+              - { label: "본문 (한국어)", name: "body_ko", widget: "markdown", required: false }
+              - { label: "Body (English)", name: "body_en", widget: "markdown", required: false }
+              - { label: "썸네일", name: "thumbnail", widget: "image", required: false }
+              - { label: "외부 링크", name: "link", widget: "string", required: false }
+              - { label: "홈 고정", name: "pinned", widget: "boolean", default: false, required: false }
 
   # ── 지원 안내 ──
   - name: "faq"
