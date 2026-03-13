@@ -294,18 +294,27 @@ collections:
               - { label: "수여기관/학회", name: "venue", widget: "string", required: true }
               - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
       - name: "patents"
-        label: "특허 성과"
+        label: "지식재산권"
         file: "src/data/patents.json"
         fields:
-          - label: "특허 목록"
+          - label: "지식재산권 목록"
             name: "patents"
             widget: "list"
-            summary: "{{fields.title}} ({{fields.year}})"
+            summary: "{{fields.subtype}} | {{fields.title}} ({{fields.year}})"
             fields:
-              - { label: "ID", name: "id", widget: "string", required: true, hint: "고유 식별자 (예: patent-1)" }
-              - { label: "특허명", name: "title", widget: "string", required: true }
-              - { label: "발명자", name: "authors", widget: "string", required: false, hint: "예: 홍길동, 김철수" }
-              - { label: "출원기관", name: "venue", widget: "string", required: true }
+              - { label: "ID", name: "id", widget: "string", required: true, hint: "고유 식별자 (예: ip-1)" }
+              - label: "분류"
+                name: "subtype"
+                widget: "select"
+                required: true
+                default: "patent"
+                options:
+                  - { label: "특허", value: "patent" }
+                  - { label: "저작권", value: "copyright" }
+                  - { label: "기타", value: "other" }
+              - { label: "명칭", name: "title", widget: "string", required: true }
+              - { label: "발명자/저작자", name: "authors", widget: "string", required: false, hint: "예: 홍길동, 김철수" }
+              - { label: "출원기관/등록처", name: "venue", widget: "string", required: true }
               - { label: "연도", name: "year", widget: "number", value_type: "int", required: true }
       - name: "others"
         label: "기타 성과"

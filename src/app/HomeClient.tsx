@@ -284,7 +284,7 @@ export default function HomeClient({ newsPosts: _newsPosts }: { newsPosts: unkno
                       }`}
                       style={{ fontFamily: "'JetBrains Mono', monospace" }}
                     >
-                      {pub.type === "international" ? "INTL" : "국내"}
+                      {pub.type === "international" ? "국제" : "국내"}
                     </span>
                   </td>
 

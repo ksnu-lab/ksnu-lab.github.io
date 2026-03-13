@@ -8,16 +8,20 @@ import patentsJson from "@/data/patents.json";
 import othersJson from "@/data/others.json";
 import type { Publication } from "@/types";
 
+type PatentItem = Omit<Publication, "type"> & { subtype?: "patent" | "copyright" | "other" };
+
 const papers = papersJson.papers as Publication[];
 const awards = awardsJson.awards as Omit<Publication, "type">[];
-const patents = patentsJson.patents as Omit<Publication, "type">[];
+const patents = patentsJson.patents as PatentItem[];
 const others = othersJson.others as Omit<Publication, "type">[];
 
 type MainFilter = "papers" | "award" | "patent" | "other";
 type SubFilter = "all" | "international" | "domestic";
+type PatentSubFilter = "all" | "patent" | "copyright" | "other";
 
 const mainFilters: MainFilter[] = ["papers", "award", "patent", "other"];
 const subFilters: SubFilter[] = ["all", "international", "domestic"];
+const patentSubFilters: PatentSubFilter[] = ["all", "patent", "copyright", "other"];
 
 const typeBadge: Record<string, string> = {
   international: "bg-cyan-50 dark:bg-[rgba(0,220,130,0.10)] text-cyan-700 dark:text-emerald-400 border border-cyan-200 dark:border-[rgba(0,220,130,0.20)]",
@@ -28,6 +32,7 @@ export default function PublicationsPage() {
   const { t, locale } = useTranslation();
   const [mainFilter, setMainFilter] = useState<MainFilter>("papers");
   const [subFilter, setSubFilter] = useState<SubFilter>("all");
+  const [patentSubFilter, setPatentSubFilter] = useState<PatentSubFilter>("all");
 
   const getItems = () => {
     if (mainFilter === "papers") {
@@ -35,7 +40,10 @@ export default function PublicationsPage() {
       return papers.filter((p) => p.type === subFilter);
     }
     if (mainFilter === "award") return awards;
-    if (mainFilter === "patent") return patents;
+    if (mainFilter === "patent") {
+      if (patentSubFilter === "all") return patents;
+      return patents.filter((p) => p.subtype === patentSubFilter);
+    }
     return others;
   };
 
@@ -45,13 +53,24 @@ export default function PublicationsPage() {
   const mainLabels: Record<MainFilter, { ko: string; en: string }> = {
     papers: { ko: "논문", en: "Papers" },
     award:  { ko: "수상", en: "Awards" },
-    patent: { ko: "특허", en: "Patents" },
+    patent: { ko: "지식재산권", en: "IP Rights" },
     other:  { ko: "기타", en: "Others" },
   };
   const subLabels: Record<SubFilter, { ko: string; en: string }> = {
     all:           { ko: "전체",     en: "All" },
     international: { ko: "국제논문", en: "International" },
     domestic:      { ko: "국내논문", en: "Domestic" },
+  };
+  const patentSubLabels: Record<PatentSubFilter, { ko: string; en: string }> = {
+    all:       { ko: "전체",   en: "All" },
+    patent:    { ko: "특허",   en: "Patent" },
+    copyright: { ko: "저작권", en: "Copyright" },
+    other:     { ko: "기타",   en: "Other" },
+  };
+  const patentSubBadge: Record<string, string> = {
+    patent:    "bg-violet-50 dark:bg-[rgba(139,92,246,0.10)] text-violet-700 dark:text-violet-400 border border-violet-200 dark:border-[rgba(139,92,246,0.20)]",
+    copyright: "bg-blue-50 dark:bg-[rgba(59,130,246,0.10)] text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-[rgba(59,130,246,0.20)]",
+    other:     "bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/[0.10]",
   };
 
   return (
@@ -70,8 +89,8 @@ export default function PublicationsPage() {
         </h1>
         <p className="text-[14px] text-gray-500 dark:text-gray-400 max-w-xl">
           {locale === "ko"
-            ? "논문, 특허, 수상 등 연구실의 주요 성과물을 확인하세요."
-            : "Browse our lab's papers, patents, awards, and other research output."}
+            ? "논문, 지식재산권, 수상 등 연구실의 주요 성과물을 확인하세요."
+            : "Browse our lab's papers, IP rights, awards, and other research output."}
         </p>
       </div>
 
@@ -113,8 +132,28 @@ export default function PublicationsPage() {
         </div>
       )}
 
+      {/* Sub filter — only for patents */}
+      {mainFilter === "patent" && (
+        <div className="flex gap-[2px] bg-gray-100 dark:bg-white/[0.04] border border-gray-200 dark:border-white/[0.07] rounded-[10px] p-[3px] w-fit mb-10">
+          {patentSubFilters.map((sub) => (
+            <button
+              key={sub}
+              onClick={() => setPatentSubFilter(sub)}
+              className={`px-3 py-[5px] rounded-[7px] text-[12px] font-medium transition-all whitespace-nowrap ${
+                patentSubFilter === sub
+                  ? "bg-white dark:bg-white/[0.10] text-gray-900 dark:text-white shadow-sm"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+              }`}
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              {locale === "ko" ? patentSubLabels[sub].ko : patentSubLabels[sub].en}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Publications by year */}
-      <div className={`space-y-10 ${mainFilter !== "papers" ? "mt-10" : ""}`}>
+      <div className={`space-y-10 ${mainFilter !== "papers" && mainFilter !== "patent" ? "mt-10" : ""}`}>
         {years.map((year) => (
           <div key={year}>
             <h2
@@ -143,6 +182,21 @@ export default function PublicationsPage() {
                               {(pub as Publication).type === "international"
                                 ? (locale === "ko" ? "국제" : "INTL")
                                 : (locale === "ko" ? "국내" : "DOM")}
+                            </span>
+                          )}
+                        </td>
+                      )}
+                      {/* Subtype badge — only for patents */}
+                      {mainFilter === "patent" && (
+                        <td className="py-4 pr-3 align-top w-[72px]">
+                          {"subtype" in pub && (pub as PatentItem).subtype && (
+                            <span
+                              className={`inline-block text-[10px] font-bold px-2 py-[3px] rounded-md whitespace-nowrap ${patentSubBadge[(pub as PatentItem).subtype!] ?? ""}`}
+                              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                            >
+                              {locale === "ko"
+                                ? patentSubLabels[(pub as PatentItem).subtype!].ko
+                                : patentSubLabels[(pub as PatentItem).subtype!].en}
                             </span>
                           )}
                         </td>
