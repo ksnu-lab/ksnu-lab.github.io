@@ -135,12 +135,12 @@ export default function PublicationsPage() {
                       {/* Type badge — only for papers */}
                       {mainFilter === "papers" && (
                         <td className="py-4 pr-3 align-top w-[72px]">
-                          {"type" in pub && pub.type && (
+                          {"type" in pub && (pub as Publication).type && (
                             <span
-                              className={`inline-block text-[10px] font-bold px-2 py-[3px] rounded-md whitespace-nowrap ${typeBadge[pub.type as string] ?? ""}`}
+                              className={`inline-block text-[10px] font-bold px-2 py-[3px] rounded-md whitespace-nowrap ${typeBadge[(pub as Publication).type] ?? ""}`}
                               style={{ fontFamily: "'JetBrains Mono', monospace" }}
                             >
-                              {pub.type === "international"
+                              {(pub as Publication).type === "international"
                                 ? (locale === "ko" ? "국제" : "INTL")
                                 : (locale === "ko" ? "국내" : "DOM")}
                             </span>
