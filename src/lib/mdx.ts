@@ -5,10 +5,10 @@ import type { NewsPost, LocalizedString } from "@/types";
 
 const newsDirectory = path.join(process.cwd(), "src/content/news");
 const faqDirectory = path.join(process.cwd(), "src/content/faq");
+const dataDirectory = path.join(process.cwd(), "src/data");
 
-// Decap CMS writes flat fields (title_ko, title_en)
-// Manual MDX uses nested fields (title: { ko, en })
-// This normalizes both formats
+// ─── Localized field normalization ───────────────────────────────────────────
+
 function normalizeLocalizedField(
   data: Record<string, unknown>,
   field: string
@@ -28,7 +28,103 @@ function normalizeLocalizedField(
   return undefined;
 }
 
-export function getNewsSlugs(): string[] {
+// ─── JSON-based news (one file per category) ─────────────────────────────────
+
+type JsonNewsCategory = "announcement" | "research" | "seminar" | "general";
+
+interface RawJsonPost {
+  id: string;
+  title_ko: string;
+  title_en?: string;
+  date: string;
+  summary_ko?: string;
+  summary_en?: string;
+  body_ko?: string;
+  body_en?: string;
+  thumbnail?: string;
+  link?: string;
+  pinned?: boolean;
+}
+
+const JSON_CATEGORIES: JsonNewsCategory[] = [
+  "announcement",
+  "research",
+  "seminar",
+  "general",
+];
+
+function readJsonNewsPosts(category: JsonNewsCategory): NewsPost[] {
+  const filePath = path.join(dataDirectory, `news-${category}.json`);
+  if (!fs.existsSync(filePath)) return [];
+  try {
+    const data = JSON.parse(fs.readFileSync(filePath, "utf8")) as {
+      posts?: RawJsonPost[];
+    };
+    return (data.posts ?? []).map((entry) => ({
+      slug: `jn__${category}__${entry.id}`,
+      title: { ko: entry.title_ko, en: entry.title_en || entry.title_ko },
+      date:
+        typeof entry.date === "string"
+          ? entry.date
+          : new Date(entry.date).toISOString().split("T")[0],
+      category,
+      summary: entry.summary_ko
+        ? { ko: entry.summary_ko, en: entry.summary_en || entry.summary_ko }
+        : undefined,
+      thumbnail: entry.thumbnail || undefined,
+      pinned: entry.pinned === true,
+    }));
+  } catch {
+    return [];
+  }
+}
+
+function getAllJsonNewsPosts(): NewsPost[] {
+  return JSON_CATEGORIES.flatMap(readJsonNewsPosts);
+}
+
+function getJsonNewsPostBySlug(
+  slug: string
+): { meta: NewsPost; content: string } | null {
+  // slug format: "jn__{category}__{id}"
+  const parts = slug.split("__");
+  if (parts[0] !== "jn" || parts.length < 3) return null;
+  const category = parts[1] as JsonNewsCategory;
+  const id = parts.slice(2).join("__");
+
+  const filePath = path.join(dataDirectory, `news-${category}.json`);
+  if (!fs.existsSync(filePath)) return null;
+  try {
+    const data = JSON.parse(fs.readFileSync(filePath, "utf8")) as {
+      posts?: RawJsonPost[];
+    };
+    const entry = (data.posts ?? []).find((p) => p.id === id);
+    if (!entry) return null;
+    return {
+      meta: {
+        slug,
+        title: { ko: entry.title_ko, en: entry.title_en || entry.title_ko },
+        date:
+          typeof entry.date === "string"
+            ? entry.date
+            : new Date(entry.date).toISOString().split("T")[0],
+        category,
+        summary: entry.summary_ko
+          ? { ko: entry.summary_ko, en: entry.summary_en || entry.summary_ko }
+          : undefined,
+        thumbnail: entry.thumbnail || undefined,
+        pinned: entry.pinned === true,
+      },
+      content: entry.body_ko || entry.summary_ko || "",
+    };
+  } catch {
+    return null;
+  }
+}
+
+// ─── MDX-based news ───────────────────────────────────────────────────────────
+
+function getMdxNewsSlugs(): string[] {
   if (!fs.existsSync(newsDirectory)) return [];
   return fs
     .readdirSync(newsDirectory)
@@ -36,7 +132,7 @@ export function getNewsSlugs(): string[] {
     .map((file) => file.replace(/\.mdx$/, ""));
 }
 
-export function getNewsPostBySlug(slug: string): {
+function getMdxNewsPostBySlug(slug: string): {
   meta: NewsPost;
   content: string;
 } {
@@ -44,15 +140,34 @@ export function getNewsPostBySlug(slug: string): {
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
 
-  const title = normalizeLocalizedField(data, "title") || { ko: slug, en: slug };
+  const title = normalizeLocalizedField(data, "title") || {
+    ko: slug,
+    en: slug,
+  };
   const summary = normalizeLocalizedField(data, "summary");
+
+  // Map old categories to new ones
+  const rawCategory = data.category || "general";
+  const categoryMap: Record<string, NewsPost["category"]> = {
+    announcement: "announcement",
+    publication: "general",
+    award: "general",
+    event: "seminar",
+    general: "general",
+    research: "research",
+    seminar: "seminar",
+  };
+  const category: NewsPost["category"] = categoryMap[rawCategory] ?? "general";
 
   return {
     meta: {
       slug,
       title,
-      date: typeof data.date === "string" ? data.date : new Date(data.date).toISOString().split("T")[0],
-      category: data.category || "general",
+      date:
+        typeof data.date === "string"
+          ? data.date
+          : new Date(data.date).toISOString().split("T")[0],
+      category,
       summary,
       thumbnail: data.thumbnail,
       pinned: data.pinned === true,
@@ -61,13 +176,48 @@ export function getNewsPostBySlug(slug: string): {
   };
 }
 
-export function getAllNewsPosts(): NewsPost[] {
-  const slugs = getNewsSlugs();
-  const posts = slugs
-    .map((slug) => getNewsPostBySlug(slug).meta)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  return posts;
+// ─── Public API ───────────────────────────────────────────────────────────────
+
+export function getNewsSlugs(): string[] {
+  const mdxSlugs = getMdxNewsSlugs();
+  const jsonSlugs = JSON_CATEGORIES.flatMap((cat) => {
+    const filePath = path.join(dataDirectory, `news-${cat}.json`);
+    if (!fs.existsSync(filePath)) return [];
+    try {
+      const data = JSON.parse(fs.readFileSync(filePath, "utf8")) as {
+        posts?: RawJsonPost[];
+      };
+      return (data.posts ?? []).map((p) => `jn__${cat}__${p.id}`);
+    } catch {
+      return [];
+    }
+  });
+  return [...mdxSlugs, ...jsonSlugs];
 }
+
+export function getNewsPostBySlug(slug: string): {
+  meta: NewsPost;
+  content: string;
+} {
+  if (slug.startsWith("jn__")) {
+    const result = getJsonNewsPostBySlug(slug);
+    if (result) return result;
+    throw new Error(`JSON post not found: ${slug}`);
+  }
+  return getMdxNewsPostBySlug(slug);
+}
+
+export function getAllNewsPosts(): NewsPost[] {
+  const mdxPosts = getMdxNewsSlugs().map(
+    (slug) => getMdxNewsPostBySlug(slug).meta
+  );
+  const jsonPosts = getAllJsonNewsPosts();
+  return [...mdxPosts, ...jsonPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+}
+
+// ─── FAQ ─────────────────────────────────────────────────────────────────────
 
 export interface FaqItem {
   question: LocalizedString;
@@ -87,8 +237,14 @@ export function getAllFaqItems(): FaqItem[] {
       const fileContents = fs.readFileSync(filePath, "utf8");
       const { data } = matter(fileContents);
 
-      const question = normalizeLocalizedField(data, "question") || { ko: "", en: "" };
-      const answer = normalizeLocalizedField(data, "answer") || { ko: "", en: "" };
+      const question = normalizeLocalizedField(data, "question") || {
+        ko: "",
+        en: "",
+      };
+      const answer = normalizeLocalizedField(data, "answer") || {
+        ko: "",
+        en: "",
+      };
 
       return {
         question,

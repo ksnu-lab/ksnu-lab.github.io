@@ -31,20 +31,26 @@
   --color-gray-950: #030712;
 }
 
+/* Hero outlined text (second line of hero heading) */
+.hero-stroke {
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.35);
+  color: transparent;
+}
+
 body {
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   color: #111827;
-  background-color: #fbfeff;
+  background-color: #fafcfe;
   transition: background-color 0.2s, color 0.2s;
 }
 
 .dark body,
 body:where(.dark *) {
   color: var(--color-gray-200);
-  background-color: var(--color-gray-900);
+  background-color: var(--color-gray-950);
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -63,7 +63,7 @@ export interface Alumni {
 export interface Publication {
   id: string;
   title: string;
-  authors: string[];
+  authors?: string;
   venue: string;
   volume?: string;
   pages?: string;
@@ -89,7 +89,7 @@ export interface NewsPost {
   slug: string;
   title: LocalizedString;
   date: string;
-  category: "announcement" | "publication" | "award" | "event" | "general";
+  category: "announcement" | "research" | "seminar" | "general";
   summary?: LocalizedString;
   thumbnail?: string;
   pinned?: boolean;
