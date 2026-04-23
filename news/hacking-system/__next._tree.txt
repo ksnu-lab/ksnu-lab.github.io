@@ -1,8 +1,8 @@
-:HL["/pages/_next/static/chunks/f3434e937b238371.css","style"]
+:HL["/_next/static/chunks/f3434e937b238371.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap","style"]
-:HL["/pages/images/roadmap/buffer-overflow.svg","image"]
-:HL["/pages/images/roadmap/rop.svg","image"]
-:HL["/pages/images/roadmap/shellcode.svg","image"]
-:HL["/pages/images/roadmap/privilege-escalation.svg","image"]
-:HL["/pages/images/roadmap/format-string.svg","image"]
-0:{"buildId":"g-i0aCDFgNWYgUHGrmn4A","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"news","paramType":null,"paramKey":"news","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"hacking-system","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/images/roadmap/buffer-overflow.svg","image"]
+:HL["/images/roadmap/rop.svg","image"]
+:HL["/images/roadmap/shellcode.svg","image"]
+:HL["/images/roadmap/privilege-escalation.svg","image"]
+:HL["/images/roadmap/format-string.svg","image"]
+0:{"buildId":"UEMDR1UKNeXTrOzA4r9Ic","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"news","paramType":null,"paramKey":"news","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"hacking-system","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
