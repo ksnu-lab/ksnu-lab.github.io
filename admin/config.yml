@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: ksnu-lab/pages
+  repo: ksnu-lab/ksnu-lab.github.io
   branch: main
 
 media_folder: "public/images"
