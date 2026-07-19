@@ -84,19 +84,24 @@ function memberBlock(m) {
 </div>`;
 }
 
+// "students" → "Students", "visiting_scholar" → "Visiting Scholar" (한글 키는 그대로)
+function sectionTitle(key) {
+  return key.replace(/[_-]+/g, " ").replace(/(^|\s)[a-z]/g, (c) => c.toUpperCase());
+}
+
 function renderMembers(container, data) {
-  let html = `<h2>Faculty</h2>${(data.faculty || []).map(memberBlock).join("")}`;
-  html += "<h2>Students</h2>";
-  if (data.students && data.students.length) {
-    html += data.students.map(memberBlock).join("");
-  } else {
-    html +=
-      '<p>함께 연구할 학생을 모집하고 있습니다. — <a href="about.html#join">지원 안내 보기</a></p>';
-  }
-  if (data.alumni && data.alumni.length) {
-    html += `<h2>Alumni</h2>${data.alumni.map(memberBlock).join("")}`;
-  }
-  container.innerHTML = html;
+  // members.json에 적힌 순서대로 섹션 생성.
+  // researcher 등 새 키를 추가하면 제목과 함께 자동으로 렌더링됩니다 (빈 배열은 건너뜀).
+  const sections = Object.entries(data)
+    .filter(([, list]) => Array.isArray(list) && list.length)
+    .map(
+      ([key, list]) =>
+        `<h2>${esc(sectionTitle(key))}</h2>${list.map(memberBlock).join("")}`
+    )
+    .join("");
+  container.innerHTML =
+    sections +
+    '<p class="recruit">함께 연구할 학생을 모집하고 있습니다. — <a href="about.html#join">지원 안내 보기</a></p>';
 }
 
 /* ---- Others ---- */

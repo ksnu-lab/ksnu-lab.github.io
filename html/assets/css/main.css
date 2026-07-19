@@ -168,6 +168,8 @@ figcaption { color: var(--muted); font-size: 0.9rem; font-style: italic; margin-
 .member .links { font-size: 0.95rem; margin: 4px 0 0; }
 .member .links a { margin-right: 10px; }
 
+.recruit { margin-top: 44px; }
+
 /* ---- 논문 ---- */
 
 .pub { margin: 0 0 24px; }

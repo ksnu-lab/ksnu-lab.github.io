@@ -16,6 +16,13 @@
       "venue": "Cryptology ePrint Archive"
     },
     {
+      "year": 2026,
+      "type": "international",
+      "title": "Efficient Polynomial Multiplication for HQC on ARM Cortex-M4",
+      "authors": "J. Jang, M. Lee, D. Kwon, S. Hong, S. Kim, S. Lee",
+      "venue": "IACR Transactions on Cryptographic Hardware and Embedded Systems (CHES)"
+    },
+    {
       "year": 2025,
       "type": "international",
       "title": "Side-Channel Attack on ARADI in Non-Profiling Scenarios",
@@ -28,13 +35,6 @@
       "title": "Recovering S-Box Design Structures and Quantifying Distances Between S-Boxes Using Deep Learning",
       "authors": "D. Kwon, D. Hong, J. Sung, S. Hong",
       "venue": "International Conference on Applied Cryptography and Network Security (ACNS)"
-    },
-    {
-      "year": 2026,
-      "type": "international",
-      "title": "Efficient Polynomial Multiplication for HQC on ARM Cortex-M4",
-      "authors": "J. Jang, M. Lee, D. Kwon, S. Hong, S. Kim, S. Lee",
-      "venue": "IACR Transactions on Cryptographic Hardware and Embedded Systems (CHES)"
     },
     {
       "year": 2025,

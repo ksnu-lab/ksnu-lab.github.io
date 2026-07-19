@@ -6,9 +6,14 @@
       "role": "Assistant Professor",
       "email": "dgkwon at kunsan.ac.kr",
       "links": [
-      { "label": "Home", "url": "https://donggeunkwon.github.io/" },
-      { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=GsyOeIsAAAAJ" }
+      { "label": "Home", "url": "https://donggeunkwon.github.io/" }
       ]
+    }
+  ],
+  "Researcher": [
+    {
+      "name": "TBA",
+      "role": "TBA"
     }
   ],
   "students": [
