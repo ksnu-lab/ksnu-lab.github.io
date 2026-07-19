@@ -5,21 +5,28 @@
       "name_en": "Donggeun Kwon",
       "role": "Assistant Professor",
       "email": "dgkwon at kunsan.ac.kr",
-      "link": {
-        "label": "Google Scholar",
-        "url": "https://scholar.google.com/citations?user=GsyOeIsAAAAJ"
-      }
+      "links": [
+      { "label": "Home", "url": "https://donggeunkwon.github.io/" },
+      { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=GsyOeIsAAAAJ" }
+      ]
     }
   ],
   "students": [
     {
       "name": "이재훈",
       "role": "학부연구생",
-      "email": "test@naver.com",
-      "link": {
-        "label": "Home",
-        "url": "https://www.naver.com"
-      }
+      "email": "conic0805 at naver.com"
+    },
+    {
+      "name": "김경원",
+      "role": "학부연구생",
+      "email": "beebooya1020 at kunsan.ac.kr"
+      
+    },
+    {
+      "name": "김종운",
+      "role": "학부연구생",
+      "email": "jougunkim at gmail.com"
     }
   ],
   "alumni": []

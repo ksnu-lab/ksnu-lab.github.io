@@ -4,7 +4,11 @@
    ========================================================== */
 
 const esc = (s) =>
-  String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 
 async function loadJSON(name) {
   const res = await fetch(`data/${name}.json`, { cache: "no-store" });
@@ -30,16 +34,6 @@ function renderNews(container, items) {
 
 /* ---- Publications ---- */
 
-function highlightAuthors(authors, names) {
-  let out = esc(authors);
-  for (const name of names || []) {
-    out = out
-      .split(esc(name))
-      .join(`<span class="me">${esc(name)}</span>`);
-  }
-  return out;
-}
-
 function renderPublications(container, data) {
   const minYear = data.min_display_year || 0;
   const items = data.items.filter((p) => p.year >= minYear);
@@ -52,7 +46,7 @@ function renderPublications(container, data) {
           (p) => `<div class="pub">
   <div class="venue">${esc(p.venue)}</div>
   <div class="title">${esc(p.title)}</div>
-  ${p.authors ? `<div class="authors">${highlightAuthors(p.authors, data.highlight)}</div>` : ""}
+  ${p.authors ? `<div class="authors">${esc(p.authors)}</div>` : ""}
 </div>`
         )
         .join("");
@@ -64,8 +58,11 @@ function renderPublications(container, data) {
 /* ---- Members ---- */
 
 function memberBlock(m) {
-  // "links" 배열(여러 개) 또는 "link" 단일 객체(기존 형식) 모두 지원
-  const links = m.links || (m.link ? [m.link] : []);
+  // "links" 배열(여러 개) 또는 "link" 단일 객체(기존 형식) 모두 지원.
+  // url과 label이 모두 있는 항목만 표시 — 미기재/빈 값이면 링크 영역 자체를 만들지 않음.
+  const links = (m.links || (m.link ? [m.link] : [])).filter(
+    (l) => l && l.url && l.label
+  );
   const linksHtml = links.length
     ? `<p class="links">${links
         .map((l) => `<a href="${esc(l.url)}">[${esc(l.label)}]</a>`)

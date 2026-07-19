@@ -182,8 +182,6 @@ figcaption { color: var(--muted); font-size: 0.9rem; font-style: italic; margin-
 .pub .title { font-weight: 700; margin: 1px 0; }
 .pub .authors { font-size: 0.95rem; color: var(--muted); }
 
-.me { text-decoration: underline; text-underline-offset: 3px; }
-
 /* ---- 수상 · 과제 ---- */
 
 .rows { list-style: none; padding: 0; }
