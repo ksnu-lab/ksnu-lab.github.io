@@ -64,11 +64,18 @@ function renderPublications(container, data) {
 /* ---- Members ---- */
 
 function memberBlock(m) {
+  // "links" 배열(여러 개) 또는 "link" 단일 객체(기존 형식) 모두 지원
+  const links = m.links || (m.link ? [m.link] : []);
+  const linksHtml = links.length
+    ? `<p class="links">${links
+        .map((l) => `<a href="${esc(l.url)}">[${esc(l.label)}]</a>`)
+        .join(" ")}</p>`
+    : "";
   return `<div class="member">
   <p class="name">${esc(m.name)}${m.name_en ? ` <span class="en">${esc(m.name_en)}</span>` : ""}</p>
   ${m.role ? `<p class="role">${esc(m.role)}</p>` : ""}
   ${m.email ? `<p class="contact">${esc(m.email)}</p>` : ""}
-  ${m.link ? `<p class="links"><a href="${esc(m.link.url)}">[${esc(m.link.label)}]</a></p>` : ""}
+  ${linksHtml}
 </div>`;
 }
 
