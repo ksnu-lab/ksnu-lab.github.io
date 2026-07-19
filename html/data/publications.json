@@ -1,0 +1,79 @@
+{
+  "min_display_year": 2024,
+  "highlight": [
+    "권동근",
+    "D. Kwon"
+  ],
+  "items": [
+    {
+      "year": 2026,
+      "type": "international",
+      "title": "Multiple-of Property for Related-Differential Distinguishers on 5-Round AES",
+      "authors": "H. Shin, D. Kwon, B. Seok, D. Hong, J. Sung, S. Hong, D. Lee",
+      "venue": "Cryptology ePrint Archive"
+    },
+    {
+      "year": 2025,
+      "type": "international",
+      "title": "Side-Channel Attack on ARADI in Non-Profiling Scenarios",
+      "authors": "D. Kwon, S. Hong",
+      "venue": "IEEE Access"
+    },
+    {
+      "year": 2025,
+      "type": "international",
+      "title": "Recovering S-Box Design Structures and Quantifying Distances Between S-Boxes Using Deep Learning",
+      "authors": "D. Kwon, D. Hong, J. Sung, S. Hong",
+      "venue": "International Conference on Applied Cryptography and Network Security (ACNS)"
+    },
+    {
+      "year": 2025,
+      "type": "international",
+      "title": "Efficient Polynomial Multiplication for HQC on ARM Cortex-M4",
+      "authors": "J. Jang, M. Lee, D. Kwon, S. Hong, S. Kim, S. Lee",
+      "venue": "Cryptology ePrint Archive"
+    },
+    {
+      "year": 2025,
+      "type": "international",
+      "title": "Towards Optimal Differential Attacks on FLY and PIPO",
+      "authors": "I. Kim, S. Kim, S. Kim, D. Kwon, H. Shin, D. Lee, D. Hong, J. Sung, S. Hong",
+      "venue": "Cryptology ePrint Archive"
+    },
+    {
+      "year": 2024,
+      "type": "international",
+      "title": "Differential Factors Revisited: A Sufficient Condition for the Practical Use of Differential Factors",
+      "authors": "S. Kim, M. Shin, H. Shin, I. Kim, S. Kim, D. Kwon, D. Hong, J. Sung, S. Hong",
+      "venue": "IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences"
+    },
+    {
+      "year": 2024,
+      "type": "international",
+      "title": "Redefining Security in Shadow Cipher for IoT Nodes: New Full-Round Practical Distinguisher and the Infeasibility of Key-Recovery Attacks",
+      "authors": "S. Kim, M. Shin, S. Kim, H. Shin, I. Kim, D. Kwon, D. Lee, S. Kim, D. Hong, et al.",
+      "venue": "IEEE Internet of Things Journal"
+    },
+    {
+      "year": 2022,
+      "type": "international",
+      "title": "Optimizing Implementations of Non-Profiled Deep Learning-Based Side-Channel Attacks",
+      "authors": "D. Kwon, S. Hong, H. Kim",
+      "venue": "IEEE Access"
+    },
+    {
+      "year": 2021,
+      "type": "international",
+      "title": "Non-Profiled Deep Learning-Based Side-Channel Preprocessing with Autoencoders",
+      "authors": "D. Kwon, H. Kim, S. Hong",
+      "venue": "IEEE Access"
+    },
+    {
+      "year": 2020,
+      "type": "international",
+      "title": "Highly Efficient SCA-Resistant Binary Field Multiplication on 8-Bit AVR Microcontrollers",
+      "authors": "S.C. Seo, D. Kwon",
+      "venue": "Applied Sciences"
+    }
+  ]
+}

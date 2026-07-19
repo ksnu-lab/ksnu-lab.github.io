@@ -1,0 +1,26 @@
+{
+  "faculty": [
+    {
+      "name": "권동근",
+      "name_en": "Donggeun Kwon",
+      "role": "Assistant Professor",
+      "email": "dgkwon at kunsan.ac.kr",
+      "link": {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=GsyOeIsAAAAJ"
+      }
+    }
+  ],
+  "students": [
+    {
+      "name": "이재훈",
+      "role": "학부연구생",
+      "email": "test@naver.com",
+      "link": {
+        "label": "Home",
+        "url": "https://www.naver.com"
+      }
+    }
+  ],
+  "alumni": []
+}
