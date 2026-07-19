@@ -23,11 +23,19 @@ function showLoadError(container) {
 
 /* ---- News (홈) ---- */
 
+// 뉴스 텍스트의 "[텍스트](https://...)" 패턴을 링크로 변환 (그 외는 전부 이스케이프)
+function linkify(text) {
+  return esc(text).replace(
+    /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+    '<a href="$2">$1</a>'
+  );
+}
+
 function renderNews(container, items) {
   container.innerHTML = `<ul class="news">${items
     .map(
       (n) =>
-        `<li><span class="date">${esc(n.date)}</span><span>${esc(n.text)}</span></li>`
+        `<li><span class="date">${esc(n.date)}</span><span>${linkify(n.text)}</span></li>`
     )
     .join("")}</ul>`;
 }
